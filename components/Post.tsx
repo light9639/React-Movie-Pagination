@@ -8,9 +8,6 @@ export default function Posts() {
     const [page, setPage] = useState<number>(1);
     const offset = (page - 1) * limit;
 
-    const key = "14c8cd43e94f788fd795b70ca3650c98";
-    const url = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=${key}`;
-
     useEffect(() => {
         fetch("https://yts.mx/api/v2/list_movies.json?sort=seeds&minimum_rating=8&page=1&limit=50")
             .then((res) => res.json())
