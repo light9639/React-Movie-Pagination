@@ -37,15 +37,12 @@ export default function Posts() {
             <Main>
                 {posts.slice(offset, offset + limit).map((item: any, idx: number) => (
                     <Article key={item.id}>
+                        <h3>{item.title}</h3>
                         <Img src={item.medium_cover_image} alt={item.title} />
-                        <div>
-                            <h3>
-                                {item.title},
-                            </h3>
+                        <TextBox>
                             <p>방영연도 : {item.year}</p>
                             <p>Rating(평점) : {item.rating}</p>
-                            <p>Genres: {item.genres}</p>
-                        </div>
+                        </TextBox>
 
                     </Article>
                 ))}
@@ -64,11 +61,8 @@ export default function Posts() {
 }
 
 const Layout = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 900px;
+    text-align: center;
+    max-width: 1200px;
     margin: 0 auto;
 `;
 
@@ -78,35 +72,24 @@ const Main = styled.article`
     margin: 0 auto;
     flex-wrap: wrap;
     text-align: center;
-    margin-top: 15px;
+    padding: 20px;
 `
 
 const Article = styled.article`
-    max-width: calc(900px / 3.3);
-    margin: 10px;
+    max-width: calc(920px / 3);
+    margin: 20px;
     width: 100%;
+    background-color: #f8fafc;
+    color: #333;
+    border-radius: 10px;
+    padding: 10px 20px 20px 20px;
 
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 1200px) {
         margin: 10px auto;
     }
 
-    div {
-        padding: 0.25rem;
-    }
-
     h3 {
-        font-size: 1rem;
-        line-height: 1;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-    }
-
-    p {
-        font-size: 0.65rem;
-        line-height: 1;
+        font-size: 1.25rem;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
@@ -116,6 +99,21 @@ const Article = styled.article`
 `
 
 const Img = styled.img`
-    width: 150px;
-    margin-top: 10px;
+    width: 70%;
+    border-radius: 10px;
+`
+
+const TextBox = styled.div`
+    margin-top: 20px;
+
+    p {
+        font-size: 0.9rem;
+        letter-spacing: -0.5;
+        font-weight: 600;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
 `

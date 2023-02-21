@@ -50,25 +50,33 @@ const Button = styled.button`
     width: 100vw;
     height: 100vh;
     margin: 2px;
-    background: black;
-    color: white;
+    background: #fff;
+    color: #000;
+    font-weight: 600;
     font-size: 1rem;
     transition: .5s;
 
     &:hover {
         background: #ef4444;
+        color: #fff;
         cursor: pointer;
         transform: translateY(-2px);
     }
 
     &[disabled] {
-        background: #f87171;
-        cursor: revert;
+        /* background: #fff;
+        color: #fff; */
+        cursor: no-drop;
         transform: revert;
+        &:hover {
+            background: #fff;
+            color: #000;
+        }
     }
 
     &[aria-current] {
         background: #dc2626;
+        color: #fff;
         font-weight: bold;
         cursor: revert;
         transform: revert;

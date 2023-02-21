@@ -3,10 +3,10 @@ import Post from "@components/Post";
 
 export default function App(): JSX.Element {
   return (
-    <>
+    <div className="App">
       <GlobalStyle />
       <Post />
-    </>
+    </div>
   );
 }
 
@@ -17,7 +17,14 @@ const GlobalStyle = createGlobalStyle`
     background-size: cover;
     background-blend-mode: darken;
     background-color: #222;
-    color: #fff
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  a,p,span,b,h1,h2,h3,h4,h5,h6 {
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   }
 
   select {
