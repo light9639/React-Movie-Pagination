@@ -318,3 +318,5 @@ const Button = styled.button`
 
 export default Pagination;
 ```
+## 📎 출처
+- <a href="https://www.daleseo.com/react-pagination/">React로 페이지네이션 UI 구현하기</a>
